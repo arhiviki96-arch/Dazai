@@ -1,0 +1,6 @@
+body {
+  background-image: url('images/background.jpg'); /* шлях до картинки */
+  background-size: cover;        /* покриває весь екран */
+  background-repeat: no-repeat;  /* не повторюється */
+  background-position: center;   /* по центру */
+}
