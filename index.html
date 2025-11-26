@@ -3,100 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Осаму Дазай — Интерактивный сайт</title>
+    <title>Осаму Дазай — Проект</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Фон -->
+    <!-- Фоновый блок с затемнением -->
     <div class="overlay">
         <header>
-            <h1>Я — Осаму Дазай</h1>
-            <p>А ты кто, воин?</p>
-
-            <div class="btn-box">
-                <a href="#bio" class="btn">Кто я?</a>
-                <a href="#facts" class="btn">Интересные факты</a>
-                <a href="#secret" class="btn">Секретная информация</a>
-                <a href="#study" class="btn">Изучи меня</a>
-            </div>
+            <h1>Осаму Дазай</h1>
+            <p>Гений, хаос, юмор... Кто он на самом деле?</p>
+            <a href="#more" class="btn">Узнать больше</a>
         </header>
     </div>
 
-    <!-- Блок 1 — Биография -->
-    <section id="bio" class="block">
+    <!-- Блок информации -->
+    <section id="more">
         <h2>Кто такой Осаму Дазай?</h2>
         <p>
-            Осаму Дазай — один из ключевых персонажей вселенной «Бродячие псы». 
-            Умный, харизматичный, загадочный и одновременно опасный. 
-            Был членом Портовой мафии, позже стал сотрудником Детективного агентства.
-            Его способность — «Неполноценный человек», отменяющая любые другие способности.
+            Осаму Дазай — старший сотрудник Вооружённого Детективного Агентства,
+            обладатель способности «Неполноценный Человек». 
+            Ранее был членом Портовой Мафии и напарником Накахары Чуи.
         </p>
     </section>
 
-    <!-- Блок 2 — Факты -->
-    <section id="facts" class="block">
-        <h2>Интересные факты</h2>
-        <ul>
-            <li>Любит шутить о своей смерти, но при этом боится боли.</li>
-            <li>Обладает гениальным интеллектом и превосходной логикой.</li>
-            <li>Спит где угодно: на полу, в офисе, на лестнице.</li>
-            <li>Ест лапшу и сладости, потому что не хочет тратить время на готовку.</li>
-            <li>Его прошлое — самое тёмное среди всех героев.</li>
-        </ul>
-    </section>
-
-    <!-- Блок 3 — Секрет -->
-    <section id="secret" class="block secret">
-        <h2>Секрет Дазая, о котором мало кто знает</h2>
+    <!-- Секрет -->
+    <section id="secret">
+        <h2>Секрет о Дазае</h2>
         <p>
-            На самом деле Дазай притворяется ленивым и безразличным.  
-            Но он — один из самых эмоционально глубоких персонажей.  
-            Его «насмешливость» — это маска, которая скрывает огромную боль, потерю и одиночество.  
-            Он пережил такое, что большинство просто бы не выдержало.
+            Несмотря на его легкомысленность и шутки о смерти, Дазай — один из самых умных стратегов в серии.
+            Он всегда на 10 шагов впереди всех, даже когда притворяется идиотом.
         </p>
     </section>
 
-    <!-- Блок 4 — Учебный режим -->
-    <section id="study" class="block study">
-        <h2>Изучи Дазая Осаму</h2>
-        <div class="study-grid">
+    <!-- Цитаты -->
+    <section id="quotes">
+        <h2>Случайная цитата Дазая</h2>
 
-            <div class="card">
-                <h3>Личность</h3>
-                <p>Харизматичный манипулятор, который всегда на шаг впереди.</p>
-            </div>
-
-            <div class="card">
-                <h3>Прошлое</h3>
-                <p>Бывший лидер мафии. Несёт в себе шрамы прошлого.</p>
-            </div>
-
-            <div class="card">
-                <h3>Способность</h3>
-                <p>Полностью блокирует сверхспособности других людей при касании.</p>
-            </div>
-
-            <div class="card">
-                <h3>Союзники</h3>
-                <p>Куникида, Ацуси, Ранпо — часть его «новой семьи».</p>
-            </div>
-
+        <div id="quoteBox" class="quote-box">
+            Нажми кнопку, чтобы услышать мысли Дазая...
         </div>
+
+        <button id="quoteBtn" class="btn secondary-btn">Показать цитату</button>
     </section>
 
-    <!-- Скрипт -->
+    <!-- JavaScript -->
     <script>
-        // Плавное появление блоков
-        const buttons = document.querySelectorAll('.btn');
+        // Кнопка "Узнать больше"
+        document.querySelector('.btn').addEventListener('click', function(e){
+            e.preventDefault();
+            const target = document.querySelector('#more');
+            target.classList.add('show');
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
 
-        buttons.forEach(btn => {
-            btn.addEventListener('click', e => {
-                e.preventDefault();
-                const target = document.querySelector(btn.getAttribute('href'));
-                target.classList.add('show');
-                target.scrollIntoView({ behavior: 'smooth' });
-            });
+        // Случайные цитаты Дазая
+        const quotes = [
+            "Жизнь — это глупая игра, но я играю в неё лучше всех.",
+            "Люди — странные существа. Они никогда не видят, что у них под носом.",
+            "Смерть? Нет, спасибо. Я уже пробовал.",
+            "Иногда хаос — лучший способ восстановить порядок.",
+            "Если хочешь понять человека — посмотри, что он пытается скрыть.",
+            "Я улыбаюсь, потому что так проще, чем объяснять, что внутри пусто.",
+            "Только безумцы по-настоящему свободны.",
+            "Не путай мою доброту с отсутствием зубов."
+        ];
+
+        const quoteBox = document.getElementById("quoteBox");
+        const quoteBtn  = document.getElementById("quoteBtn");
+
+        quoteBtn.addEventListener("click", () => {
+            const random = Math.floor(Math.random() * quotes.length);
+            quoteBox.textContent = quotes[random];
+            quoteBox.classList.add("show");
+
+            setTimeout(() => {
+                quoteBox.classList.remove("show");
+                setTimeout(() => quoteBox.classList.add("show"), 10);
+            }, 100);
         });
     </script>
 
