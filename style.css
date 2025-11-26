@@ -1,6 +1,10 @@
 body {
-  background-image: url('images/background.jpg'); /* шлях до картинки */
-  background-size: cover;        /* покриває весь екран */
-  background-repeat: no-repeat;  /* не повторюється */
-  background-position: center;   /* по центру */
+    background-image: url('background.jpg'); /* шлях до картинки */
+    background-size: cover;       /* картинка заповнює весь екран */
+    background-position: center;  /* центрує картинку */
+    background-repeat: no-repeat; /* картинка не повторюється */
+    font-family: Arial, sans-serif;
+    color: white;                 /* текст буде видно на фоні */
+    text-align: center;
+    padding-top: 50px;
 }
