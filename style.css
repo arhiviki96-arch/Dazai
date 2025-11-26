@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('https://i.imgur.com/BaqQ4sP.jpeg') center/cover fixed no-repeat;
+      background-image: url('background.jpg'); center/cover fixed no-repeat;
     color: white;
 }
 
