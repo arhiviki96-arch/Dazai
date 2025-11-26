@@ -1,10 +1,50 @@
 body {
-    background-image: url('background.jpg'); /* шлях до картинки */
-    background-size: cover;       /* картинка заповнює весь екран */
-    background-position: top center;  /* центрує картинку */
-    background-repeat: no-repeat; /* картинка не повторюється */
-    font-family: Arial, sans-serif;
-    color: white;                 /* текст буде видно на фоні */
+    margin: 0;
+    height: 100vh;
+    background-image: url('background.jpg'); /* твоя картинка */
+    background-size: cover;      /* картинка покриває весь екран */
+    background-position: center; /* центруємо картинку */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* фон фіксується при скролі */
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+/* Контейнер для контенту */
+.content {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 20vh;  /* трохи відступу зверху */
+    background: rgba(0, 0, 0, 0.4); /* напівпрозорий фон для тексту */
+    width: 60%;
+    margin: auto;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* Параграф */
+p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+/* Кнопка */
+button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4757;
 }
