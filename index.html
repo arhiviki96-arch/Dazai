@@ -1,41 +1,73 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мій сучасний сайт</title>
+    <title>Осаму Дазай — Интерактивный сайт</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Фоновий блок з оверлеєм -->
+
+    <!-- Главный фон -->
     <div class="overlay">
         <header>
-            <h1>Я Дазай Осаму </h1>
-            <p>А ты кто воин ?</p>
-            <a href="#more" class="btn">Я?...А ты кто?</a>
+            <h1>Я — Осаму Дазай</h1>
+            <p>А кто ты, воин?</p>
+            <a href="#about" class="btn">Я?... А ты кто?</a>
         </header>
     </div>
 
-    <!-- Секція більше інформації (спочатку прихована) -->
-    <section id="more">
-        <h2>Больше информации</h2>
-        <p>Я Осаму Дазай второй главный персонаж манги и аниме-адаптации. Является одним из старших сотрудников Вооружённого Детективного Агентства и напарником Куникиды Доппо. Ранее входил в состав Исполнительного комитета Портовой Мафии и являлся напарником Чуи Накахары. Обладает способностью «Неполноценный Человек».</p>
+    <!-- 1️⃣ Блок — О Дазае -->
+    <section id="about">
+        <h2>Кто я?</h2>
+        <p>
+            Я Осаму Дазай — один из ключевых персонажей манги и аниме
+            «Бродячие псы». Сотрудник Вооружённого Детективного Агентства,
+            бывший член Портовой Мафии и партнёр Накахара Чуи. 
+            Моя способность — <b>«Неполноценный Человек»</b>, отменяющая любые силы других людей.
+        </p>
+        <a href="#facts" class="btn secondary-btn">Интересные факты</a>
+    </section>
+
+    <!-- 2️⃣ Блок — Факты -->
+    <section id="facts">
+        <h2>Интересные факты обо мне</h2>
+        <ul>
+            <li>Я гений тактики и бывшая легенда Портовой Мафии.</li>
+            <li>Всегда ношу бинты — и никто не знает точно, почему.</li>
+            <li>Люблю шутить, троллить и выводить людей из себя.</li>
+            <li>Обожаю красивых девушек… но ещё больше люблю <i>гибельные</i> планы.</li>
+        </ul>
+
+        <a href="#secret" class="btn secondary-btn">Мой секрет...</a>
+    </section>
+
+    <!-- 3️⃣ Блок — Секрет -->
+    <section id="secret">
+        <h2>Секрет Осаму Дазая</h2>
+        <p>
+            Есть один секрет, который знают единицы:  
+            <b>Дазай вовсе не такой беззаботный, каким кажется.</b><br><br>
+            За маской безумца скрывается человек, который  
+            тонко чувствует чужую боль — потому что сам пережил слишком много.
+        </p>
+
+        <a href="#top" class="btn back-btn">Вернуться наверх</a>
     </section>
 
     <!-- JavaScript -->
     <script>
-        document.querySelector('.btn').addEventListener('click', function(e){
-            e.preventDefault();
+        // Обработчик всех кнопок
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e){
+                e.preventDefault();
 
-            // Отримуємо блок
-            const target = document.querySelector('#more');
-
-            // Додаємо клас для анімації появи
-            target.classList.add('show');
-
-            // Плавна прокрутка до блоку
-            target.scrollIntoView({ behavior: 'smooth' });
+                const target = document.querySelector(this.getAttribute('href'));
+                target.classList.add('show');
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
     </script>
+
 </body>
 </html>

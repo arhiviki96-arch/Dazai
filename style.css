@@ -81,3 +81,70 @@ p {
     max-width: 800px;
     margin: 0 auto;
 }
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #b30000;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #7a0000;
+    transform: scale(1.05);
+}
+
+.secondary-btn {
+    background-color: #333;
+}
+
+.secondary-btn:hover {
+    background-color: #111;
+}
+
+/* Блоки */
+section {
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(70px);
+    transition: all 0.7s ease;
+}
+
+/* Появление */
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Заголовки */
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+section p, section ul {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* UL */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 12px;
+}
+
+/* Кнопка назад */
+.back-btn {
+    margin-top: 40px;
+    background-color: #444;
+}
