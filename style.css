@@ -14,7 +14,7 @@ body {
 .content {
     text-align: center;
     padding-top: 20vh;  /* трохи відступу зверху */
-    background: rgba(0, 0, 0, 0.4); /* напівпрозорий фон для тексту */
+    background: rgba(228, 228, 228, 0.4); /* напівпрозорий фон для тексту */
     width: 60%;
     margin: auto;
     border-radius: 15px;
