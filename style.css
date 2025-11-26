@@ -1,7 +1,7 @@
 body {
     background-image: url('background.jpg'); /* шлях до картинки */
     background-size: cover;       /* картинка заповнює весь екран */
-    background-position: center;  /* центрує картинку */
+    background-position: top center;  /* центрує картинку */
     background-repeat: no-repeat; /* картинка не повторюється */
     font-family: Arial, sans-serif;
     color: white;                 /* текст буде видно на фоні */
