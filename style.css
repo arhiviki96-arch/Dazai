@@ -1,7 +1,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background-image: url('background.jpg'); /* твоя картинка */
+    background-image: url('images/background.jpg'); /* твоя картинка */
     background-size: cover;      /* картинка покриває весь екран */
     background-position: center; /* центруємо картинку */
     background-repeat: no-repeat;
