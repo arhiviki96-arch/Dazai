@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Осаму Дазай — Проект</title>
+    <title>Осаму Дазай — Портовая Мафия</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,51 +13,66 @@
         <header>
             <h1>Осаму Дазай</h1>
             <p>Гений, хаос, юмор... Кто он на самом деле?</p>
-            <a href="#more" class="btn">Узнать больше</a>
+            <div class="btn-box">
+                <a href="#bio" class="btn">Биография</a>
+                <a href="#facts" class="btn">Факты</a>
+                <a href="#secret" class="btn">Секрет</a>
+                <a href="#quotes" class="btn">Цитаты</a>
+            </div>
         </header>
     </div>
 
-    <!-- Блок информации -->
-    <section id="more">
-        <h2>Кто такой Осаму Дазай?</h2>
+    <!-- Биография -->
+    <section id="bio" class="block">
+        <h2>Биография</h2>
         <p>
-            Осаму Дазай — старший сотрудник Вооружённого Детективного Агентства,
-            обладатель способности «Неполноценный Человек». 
-            Ранее был членом Портовой Мафии и напарником Накахары Чуи.
+            Осаму Дазай — член Портовой Мафии, позже сотрудник Детективного агентства.  
+            Гениальный стратег и манипулятор, мастер психологических игр.
         </p>
     </section>
 
+    <!-- Факты -->
+    <section id="facts" class="block">
+        <h2>Интересные факты</h2>
+        <ul>
+            <li>Любит шутить о своей смерти.</li>
+            <li>Обладает высоким интеллектом и аналитическими способностями.</li>
+            <li>Его способность «Неполноценный человек» нейтрализует силы других.</li>
+            <li>Скрывает внутреннюю боль за маской юмора.</li>
+        </ul>
+    </section>
+
     <!-- Секрет -->
-    <section id="secret">
-        <h2>Секрет о Дазае</h2>
+    <section id="secret" class="block secret">
+        <h2>Секрет</h2>
         <p>
-            Несмотря на его легкомысленность и шутки о смерти, Дазай — один из самых умных стратегов в серии.
-            Он всегда на 10 шагов впереди всех, даже когда притворяется идиотом.
+            Дазай притворяется беззаботным, но на самом деле видит всё и понимает мотивы людей.  
+            Его шутки — маска, скрывающая глубокую боль и одиночество.
         </p>
     </section>
 
     <!-- Цитаты -->
-    <section id="quotes">
-        <h2>Случайная цитата Дазая</h2>
-
+    <section id="quotes" class="block">
+        <h2>Случайные цитаты</h2>
         <div id="quoteBox" class="quote-box">
-            Нажми кнопку, чтобы услышать мысли Дазая...
+            Нажми кнопку, чтобы увидеть цитату Дазая...
         </div>
-
         <button id="quoteBtn" class="btn secondary-btn">Показать цитату</button>
     </section>
 
-    <!-- JavaScript -->
+    <!-- JS -->
     <script>
-        // Кнопка "Узнать больше"
-        document.querySelector('.btn').addEventListener('click', function(e){
-            e.preventDefault();
-            const target = document.querySelector('#more');
-            target.classList.add('show');
-            target.scrollIntoView({ behavior: 'smooth' });
+        // Плавный скролл по кнопкам
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(btn.getAttribute('href'));
+                target.classList.add('show');
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
 
-        // Случайные цитаты Дазая
+        // Случайные цитаты
         const quotes = [
             "Жизнь — это глупая игра, но я играю в неё лучше всех.",
             "Люди — странные существа. Они никогда не видят, что у них под носом.",
@@ -76,7 +91,6 @@
             const random = Math.floor(Math.random() * quotes.length);
             quoteBox.textContent = quotes[random];
             quoteBox.classList.add("show");
-
             setTimeout(() => {
                 quoteBox.classList.remove("show");
                 setTimeout(() => quoteBox.classList.add("show"), 10);
